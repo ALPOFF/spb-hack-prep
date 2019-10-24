@@ -1,4 +1,14 @@
 .map {
-    width: 600px;
-    height: 400px;
+    width: 1280px;
+    height: 700px;
+    background-color: #282c34;
+    /*margin: auto;*/
+}
+
+.htm {
+    display: flex;
+}
+
+.right_panel {
+    padding-left: 10px;
 }

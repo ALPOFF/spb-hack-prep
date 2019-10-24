@@ -2,7 +2,13 @@ const ADD_COORD_POINT = 'ADD_COORD_POINT';
 const DEL_COORD_POINT = 'DEL_COORD_POINT'
 
 let initialState = {
-    users: [{id: null, coords: []}]
+    users: [],
+    workers: [
+        {name: "Lex"},
+        {name: "Lev"},
+        {name: "Nik"},
+        {name: "Lis"}
+    ]
 };
 
 let mapReducer = (state = initialState, action) => {
@@ -15,8 +21,8 @@ let mapReducer = (state = initialState, action) => {
         case DEL_COORD_POINT:
             return {
                 ...state,
-                users: state.users.filter(el => el.coords !== action.pointId)
-            }
+                users: state.users.filter(u => u.coords !== action.pointId)
+    }
         default:
             return state
     }
