@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import styles from "./Map.module.css"
 import {Map, Placemark, YMaps} from "react-yandex-maps";
 import {connect} from "react-redux";
@@ -13,39 +13,46 @@ import YandexMaps from "./Map";
 
 momentLocalizer(moment)
 
-let MapContainer = (props) => {
+class MapContainer extends Component {
 
-    const onSubmit = (formData) => {
-        props.sendData(formData.address, formData.selectedEmployee, formData.empTask, formData.taskTime)
+    componentDidMount() {
+        setInterval(() => {this.setState({a:12})}, 3000)
     }
 
-    return (
-        <div className={styles.htm}>
-            <YandexMaps {...props}/>A
-            <div className={styles.panel_container}>
-                <div className={styles.right_panel}>
-                    <h1>Add Task</h1>
-                    <h4>Selected Points</h4>
-                    {props.users.map(u => <div>Coords: {u.id} - {u.coords}</div>)}
-                    <TaskReduxForm {...props} onSubmit={onSubmit}/>
-                </div>
+    render() {
+console.log("RENDERED")
+        const onSubmit = (formData) => {
+            this.props.sendData(formData.address, formData.selectedEmployee, formData.empTask, formData.taskTime)
+        }
 
-                <div>
-                    <h1>Tasks</h1>
-                    <ul>
-                        {props.tasks.map(t =>
-                            <li>
-                                <ul>
-                                    <li>Task - {t.empTask}</li>
-                                    <li>Address - {t.address}</li>
-                                    <li>Worker - {t.selectedEmployee}</li>
-                                </ul>
-                            </li>)}
-                    </ul>
+        return (
+            <div className={styles.htm}>
+                <YandexMaps {...this.props}/>A
+                <div className={styles.panel_container}>
+                    <div className={styles.right_panel}>
+                        <h1>Add Task</h1>
+                        <h4>Selected Points</h4>
+                        {this.props.users.map(u => <div>Coords: {u.id} - {u.coords}</div>)}
+                        <TaskReduxForm {...this.props} onSubmit={onSubmit}/>
+                    </div>
+
+                    <div>
+                        <h1>Tasks</h1>
+                        <ul>
+                            {this.props.tasks.map(t =>
+                                <li>
+                                    <ul>
+                                        <li>Task - {t.empTask}</li>
+                                        <li>Address - {t.address}</li>
+                                        <li>Worker - {t.selectedEmployee}</li>
+                                    </ul>
+                                </li>)}
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 const TaskForm = (props) => {
