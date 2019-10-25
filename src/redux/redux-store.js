@@ -1,8 +1,10 @@
 import {combineReducers, createStore} from "redux";
 import mapReducer from "./map-reducer";
+import { reducer as formReducer } from 'redux-form'
 
 let reducers = combineReducers({
-    mapReducer
+    mapReducer,
+    form: formReducer
 });
 
 let store = createStore(reducers);

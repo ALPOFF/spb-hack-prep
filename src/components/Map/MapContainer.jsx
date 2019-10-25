@@ -1,74 +1,89 @@
 import React from "react";
 import styles from "./Map.module.css"
-import {Map, ObjectManager, Placemark, YMaps} from "react-yandex-maps";
+import {Map, Placemark, YMaps} from "react-yandex-maps";
 import {connect} from "react-redux";
-import {addCoordPoint, delCoordPoint} from "../../redux/map-reducer";
+import {addCoordPoint, delCoordPoint, sendData} from "../../redux/map-reducer";
+import {Field, reduxForm} from "redux-form";
+import DateTimePicker from 'react-widgets/lib/DateTimePicker'
+import moment from "moment";
+import momentLocalizer from "react-widgets-moment"
+import 'react-widgets/dist/css/react-widgets.css'
+import {renderDateTimePicker} from "../TaskPanel/common/DateTimePicker/renderDateTimePicker";
+import YandexMaps from "./Map";
 
+momentLocalizer(moment)
 
 let MapContainer = (props) => {
 
-    const placeMark = {
-        //geometry: props.coords,
-        properties: {
-            hintContent: `Пункт назначения`,
-/*
-            balloonContent: 'Это балун',
-*/
-            //iconContent: "Средний уровень"
-        },
-        modules: [/*'geoObject.addon.balloon',*/ 'geoObject.addon.hint', 'geocode']
+    const onSubmit = (formData) => {
+        props.sendData(formData.address, formData.selectedEmployee, formData.empTask, formData.taskTime)
     }
-
-    let setCoordPoint = (e) => {
-        let coordPoint = e.get("coords");
-        props.addCoordPoint(coordPoint)
-    }
-
-    let removeCoordPoint = (e) => {
-        let pointId = e.get('target').geometry._coordinates;
-        props.delCoordPoint(pointId)
-    }
-
-
 
     return (
         <div className={styles.htm}>
-
-            <YMaps>
-                <Map className={styles.map} onClick={setCoordPoint}  defaultState={{ center: [55.75, 37.57], zoom: 9 }} >
-                        {props.users.map(u =>
-
-                            <Placemark   onClick={removeCoordPoint} geometry={u.coords} {...placeMark} />
-                        )}
-                </Map>
-            </YMaps>
-
-            <div className={styles.right_panel}>
-                <h1>right-panel</h1>
-                <h4>Selected Points</h4>
-                {props.users.map( u => <div>Coords: {u.id} - {u.coords}</div> )}
-                <div>
-                    <input value={"Task"}/>
-                </div>
-                <div>
-                    deadline - kalendar'
+            <YandexMaps {...props}/>A
+            <div className={styles.panel_container}>
+                <div className={styles.right_panel}>
+                    <h1>Add Task</h1>
+                    <h4>Selected Points</h4>
+                    {props.users.map(u => <div>Coords: {u.id} - {u.coords}</div>)}
+                    <TaskReduxForm {...props} onSubmit={onSubmit}/>
                 </div>
 
-                <div>workers list</div>
-                <div>{props.workers.map( w => <div><input type="checkbox" id="scales" name="scales"/>
-                    <label htmlFor="scales">{w.name}</label></div>)}</div>
-                <button >create task</button>
+                <div>
+                    <h1>Tasks</h1>
+                    <ul>
+                        {props.tasks.map(t =>
+                            <li>
+                                <ul>
+                                    <li>Task - {t.empTask}</li>
+                                    <li>Address - {t.address}</li>
+                                    <li>Worker - {t.selectedEmployee}</li>
+                                </ul>
+                            </li>)}
+                    </ul>
+                </div>
             </div>
-
         </div>
-
-
     )
 }
 
+const TaskForm = (props) => {
+    return <form onSubmit={props.handleSubmit}>
+        <div>
+            <Field placeholder={"Enter task..."} name={"empTask"} component={"textarea"}/>
+        </div>
+        <div>
+            <Field placeholder={"Enter address..."} name={"address"} component={"input"}/>
+        </div>
+        <div>
+            <Field name="selectedEmployee" component="select">
+                <option value="">Select employee...</option>
+                {props.workers.map(w => (
+                    <option value={w.name} key={w.name}>
+                        {w.name}
+                    </option>
+                ))}
+            </Field>
+        </div>
+        <div>
+            <Field name={"taskTime"} component={renderDateTimePicker}/>
+        </div>
+        <div>
+            <button>Create Task</button>
+        </div>
+    </form>
+}
+
+const TaskReduxForm = reduxForm({
+    form: 'task'
+})(TaskForm)
+
 const mapStateToProps = (state) => ({
     users: state.mapReducer.users,
-    workers: state.mapReducer.workers
+    workers: state.mapReducer.workers,
+    tasks: state.mapReducer.tasks,
+    testData: state.mapReducer.testData
 })
 
-export default connect(mapStateToProps, {addCoordPoint, delCoordPoint}) (MapContainer);
+export default connect(mapStateToProps, {addCoordPoint, delCoordPoint, sendData})(MapContainer);
