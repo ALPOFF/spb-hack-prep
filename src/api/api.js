@@ -8,7 +8,7 @@ const instance =  axios.create({
 
 export const taskAPI = {
     expData () {
-        return instance.delete(``)
+        return instance.post(``)
     }
 
 }

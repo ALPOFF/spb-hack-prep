@@ -31,8 +31,6 @@ console.log("RENDERED")
                 <div className={styles.panel_container}>
                     <div className={styles.right_panel}>
                         <h1>Add Task</h1>
-                        <h4>Selected Points</h4>
-                        {this.props.users.map(u => <div>Coords: {u.id} - {u.coords}</div>)}
                         <TaskReduxForm {...this.props} onSubmit={onSubmit}/>
                     </div>
 
@@ -47,6 +45,7 @@ console.log("RENDERED")
                                     <ul>
                                         <li>Task - {t.empTask}</li>
                                         <li>Address - {t.address}</li>
+                                        <li>{this.props.users.map(u => <div>Coords: {u.id} - {u.coords}</div>)}</li>
                                         <li>Worker - {t.selectedEmployee}</li>
                                     </ul>
                                 </li>)}
@@ -64,7 +63,10 @@ const TaskForm = (props) => {
             <Field placeholder={"Enter task..."} name={"empTask"} component={"textarea"}/>
         </div>
         <div>
-            <Field placeholder={"Enter address..."} name={"address"} component={"input"}/>
+            <Field  name={"sdfsd"} component={"dfdf"}/>
+        </div>
+        <div>
+            <Field placeholder={"Enter address..."} name={"address"} value={"sdfsdfsfd"} component={"input"}/>
         </div>
         <div>
             <Field name="selectedEmployee" component="select">
