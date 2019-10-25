@@ -11,7 +11,7 @@ let initialState = {
         {name: "Lis"}
     ],
     tasks: [],
-    testData: [{coords: [55.8273772976203, 37.508201904296875]}]
+    testData: [{tsk: "tsk1", time: '1995-12-19T03:24:00'}, {tsk: "tsk2", time: '2019-10-25T21:29:00'}, {tsk: "tsk3", time: '2019-10-25T22:28:00'}]
 };
 
 let mapReducer = (state = initialState, action) => {

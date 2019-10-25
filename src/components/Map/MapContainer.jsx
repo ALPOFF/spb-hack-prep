@@ -27,7 +27,7 @@ console.log("RENDERED")
 
         return (
             <div className={styles.htm}>
-                <YandexMaps {...this.props}/>A
+                <YandexMaps {...this.props}/>
                 <div className={styles.panel_container}>
                     <div className={styles.right_panel}>
                         <h1>Add Task</h1>
@@ -38,6 +38,9 @@ console.log("RENDERED")
 
                     <div>
                         <h1>Tasks</h1>
+                        {this.props.testData.map(td => (new Date(td.time) > new Date())
+                            ? <div>{td.tsk}</div>
+                            : <div>Время истекло</div>)}
                         <ul>
                             {this.props.tasks.map(t =>
                                 <li>

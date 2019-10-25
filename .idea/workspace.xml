@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="412cb5e7-29a4-4249-a84d-4822204a275c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Map/MapContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/MapContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/map-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/map-reducer.js" afterDir="false" />
     </list>
@@ -59,7 +56,8 @@
       <workItem from="1571854688962" duration="26655000" />
       <workItem from="1571913316720" duration="3230000" />
       <workItem from="1571943530260" duration="16687000" />
-      <workItem from="1571969434943" duration="549000" />
+      <workItem from="1571969434943" duration="725000" />
+      <workItem from="1572024115206" duration="4782000" />
     </task>
     <servers />
   </component>
