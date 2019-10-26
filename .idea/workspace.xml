@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="412cb5e7-29a4-4249-a84d-4822204a275c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Map/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/Map.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Map/MapContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/MapContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/map-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/map-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +59,7 @@
       <workItem from="1571943530260" duration="16687000" />
       <workItem from="1571969434943" duration="725000" />
       <workItem from="1572024115206" duration="4782000" />
-      <workItem from="1572034109024" duration="5151000" />
+      <workItem from="1572034109024" duration="10092000" />
     </task>
     <servers />
   </component>

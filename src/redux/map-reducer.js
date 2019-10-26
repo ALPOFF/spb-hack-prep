@@ -3,7 +3,7 @@ const DEL_COORD_POINT = 'DEL_COORD_POINT';
 const SEND_DATA = 'SEND_DATA'
 
 let initialState = {
-    users: [],
+    coordsTemp: [],
     workers: [
         {name: "Lex"},
         {name: "Lev"},
@@ -19,17 +19,18 @@ let mapReducer = (state = initialState, action) => {
         case ADD_COORD_POINT:
             return {
                 ...state,
-                users: [...state.users, {id: state.users.length - 1, coords: action.coordPoint}]
+                coordsTemp: [...state.coordsTemp, action.coordPoint]
             };
         case SEND_DATA:
             return {
                 ...state,
-                tasks: [...state.tasks, action.payload]
+                tasks: [...state.tasks, {address: action.address, selectedEmployee: action.selectedEmployee, empTask: action.empTask, taskTime: action.taskTime, coords: state.coordsTemp}],
+                coordsTemp: []
             };
         case DEL_COORD_POINT:
             return {
                 ...state,
-                users: state.users.filter(u => u.coords !== action.pointId)
+                coordsTemp: state.coordsTemp.filter(u => u !== action.pointId)
     };
         default:
             return state
@@ -53,12 +54,10 @@ export const delCoordPoint = (pointId) => {
 export const sendData = (address, selectedEmployee, empTask, taskTime) => {
     return {
         type: SEND_DATA,
-        payload: {
             address,
             selectedEmployee,
             empTask,
             taskTime
-        }
     }
 }
 

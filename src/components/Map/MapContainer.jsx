@@ -45,7 +45,7 @@ console.log("RENDERED")
                                     <ul>
                                         <li>Task - {t.empTask}</li>
                                         <li>Address - {t.address}</li>
-                                        <li>{this.props.users.map(u => <div>Coords: {u.id} - {u.coords}</div>)}</li>
+                                        <li>{t.coords.map(tc => <span>{tc}<br/></span>)}</li>
                                         <li>Worker - {t.selectedEmployee}</li>
                                     </ul>
                                 </li>)}
@@ -92,7 +92,7 @@ const TaskReduxForm = reduxForm({
 })(TaskForm)
 
 const mapStateToProps = (state) => ({
-    users: state.mapReducer.users,
+    coordsTemp: state.mapReducer.coordsTemp,
     workers: state.mapReducer.workers,
     tasks: state.mapReducer.tasks,
     testData: state.mapReducer.testData

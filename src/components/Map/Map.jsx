@@ -29,8 +29,8 @@ let YandexMaps = (props) => {
     return (
         <YMaps>
             <Map className={styles.map} onClick={setCoordPoint} defaultState={{center: [59.927575, 30.326017], zoom: 9}}>
-                {props.users.map(u =>
-                    <Placemark onClick={removeCoordPoint} geometry={u.coords} {...placeMark} />
+                {props.coordsTemp.map(u =>
+                    <Placemark onClick={removeCoordPoint} geometry={u} {...placeMark} />
                 )}
 
                 {props.testData.map(u =>
