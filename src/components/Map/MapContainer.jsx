@@ -1,10 +1,8 @@
 import React, {Component} from "react";
 import styles from "./Map.module.css"
-import {Map, Placemark, YMaps} from "react-yandex-maps";
 import {connect} from "react-redux";
-import {addCoordPoint, delCoordPoint, sendData} from "../../redux/map-reducer";
+import {delCoordPoint, getAddress, sendData} from "../../redux/map-reducer";
 import {Field, reduxForm} from "redux-form";
-import DateTimePicker from 'react-widgets/lib/DateTimePicker'
 import moment from "moment";
 import momentLocalizer from "react-widgets-moment"
 import 'react-widgets/dist/css/react-widgets.css'
@@ -16,7 +14,7 @@ momentLocalizer(moment)
 class MapContainer extends Component {
 
     componentDidMount() {
-        setInterval(() => {this.setState({a:12})}, 3000)
+        //setInterval(() => {this.setState({a:12})}, 3000)
     }
 
     render() {
@@ -44,8 +42,7 @@ console.log("RENDERED")
                                 <li>
                                     <ul>
                                         <li>Task - {t.empTask}</li>
-                                        <li>Address - {t.address}</li>
-                                        <li>{t.coords.map(tc => <span>{tc}<br/></span>)}</li>
+                                        <li>Address - {t.coords.map(c => c.address)}</li>
                                         <li>Worker - {t.selectedEmployee}</li>
                                     </ul>
                                 </li>)}
@@ -95,7 +92,8 @@ const mapStateToProps = (state) => ({
     coordsTemp: state.mapReducer.coordsTemp,
     workers: state.mapReducer.workers,
     tasks: state.mapReducer.tasks,
-    testData: state.mapReducer.testData
+    testData: state.mapReducer.testData,
+    addressTemp: state.mapReducer.addressTemp
 })
 
-export default connect(mapStateToProps, {addCoordPoint, delCoordPoint, sendData})(MapContainer);
+export default connect(mapStateToProps, {getAddress, delCoordPoint, sendData})(MapContainer);
