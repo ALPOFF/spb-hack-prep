@@ -7,8 +7,16 @@ const instance =  axios.create({
 });
 
 export const taskAPI = {
-    sendTask(address, selectedEmployee, empTask, taskTime) {
-        return instance.post(``, {address, selectedEmployee, empTask, taskTime});
+    sendTask(selectedEmployee, empTask, taskTime, taskAddress) {
+        return instance.post(``, {selectedEmployee, empTask, taskTime, taskAddress});
+    },
+
+    getTasks() {
+        return instance.get(``);
+    },
+
+    getWorkers() {
+        return instance.get(``);
     },
 
     geodecode(coordPoint) {
