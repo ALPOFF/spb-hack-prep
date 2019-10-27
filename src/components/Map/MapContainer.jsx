@@ -1,15 +1,12 @@
 import React, {Component} from "react";
-import styles from "./Map.module.css"
+import "./Map.css"
 import {connect} from "react-redux";
 import {delCoordPoint, getAddress, sendData} from "../../redux/map-reducer";
 import {Field, reduxForm} from "redux-form";
-import moment from "moment";
-import momentLocalizer from "react-widgets-moment"
-import 'react-widgets/dist/css/react-widgets.css'
 import {renderDateTimePicker} from "../TaskPanel/common/DateTimePicker/renderDateTimePicker";
 import YandexMaps from "./Map";
+import "./MapContainer.css"
 
-momentLocalizer(moment)
 
 class MapContainer extends Component {
 
@@ -20,53 +17,45 @@ class MapContainer extends Component {
     render() {
 console.log("RENDERED")
         const onSubmit = (formData) => {
+    console.log(typeof(formData.taskTime))
             this.props.sendData(formData.address, formData.selectedEmployee, formData.empTask, formData.taskTime)
         }
 
         return (
-            <div className={styles.htm}>
-                <YandexMaps {...this.props}/>
-                <div className={styles.panel_container}>
-                    <div className={styles.right_panel}>
-                        <h1>Add Task</h1>
+            <div className="MapContainerWrapper">
+                <div className="taskPanel">
+                        <h3 style={{color: "#414141"}}>Add Task</h3>
                         <TaskReduxForm {...this.props} onSubmit={onSubmit}/>
-                    </div>
-
-                    <div>
-                        <h1>Tasks</h1>
-                        {this.props.testData.map(td => (new Date(td.time) > new Date())
+                        <h3 style={{color: "#414141"}}>Tasks</h3>
+                       {/* {this.props.testData.map(td => (new Date(td.time) > new Date())
                             ? <div>{td.tsk}</div>
-                            : <div>Время истекло</div>)}
+                            : <div>Время истекло</div>)}*/}
                         <ul>
                             {this.props.tasks.map(t =>
-                                <li>
-                                    <ul>
+                                <li className="taskItemLI">
+                                    <ul className="taskItemUL">
                                         <li>Task - {t.empTask}</li>
-                                        <li>Address - {t.coords.map(c => c.address)}</li>
                                         <li>Worker - {t.selectedEmployee}</li>
+                                        <li>Address - {t.coords.map(c => c.address)}</li>
+                                        <li>Deadline - {String(t.taskTime)}</li>
                                     </ul>
                                 </li>)}
                         </ul>
-                    </div>
-                </div>
+
+                </div> {/*Task panel*/}
+                    <YandexMaps {...this.props}/> {/*map*/}
             </div>
         )
     }
 }
 
 const TaskForm = (props) => {
-    return <form onSubmit={props.handleSubmit}>
-        <div>
-            <Field placeholder={"Enter task..."} name={"empTask"} component={"textarea"}/>
+    return <form className="ppp" onSubmit={props.handleSubmit}>
+        <div className="formItems">
+            <Field style={{width: "98%"}} placeholder={"Enter task..."} name={"empTask"} component={"textarea"}/>
         </div>
-        <div>
-            <Field  name={"sdfsd"} component={"dfdf"}/>
-        </div>
-        <div>
-            <Field placeholder={"Enter address..."} name={"address"} value={"sdfsdfsfd"} component={"input"}/>
-        </div>
-        <div>
-            <Field name="selectedEmployee" component="select">
+        <div className="formItems">
+            <Field style={{width: "100%"}} name="selectedEmployee" component="select">
                 <option value="">Select employee...</option>
                 {props.workers.map(w => (
                     <option value={w.name} key={w.name}>
@@ -75,12 +64,12 @@ const TaskForm = (props) => {
                 ))}
             </Field>
         </div>
-        <div>
-            <Field name={"taskTime"} component={renderDateTimePicker}/>
+        <div className="formItems">
+            <Field name={"taskTime"} showTime={true} component={renderDateTimePicker}/>
         </div>
-        <div>
-            <button>Create Task</button>
-        </div>
+
+                <button>Create Task</button>
+
     </form>
 }
 

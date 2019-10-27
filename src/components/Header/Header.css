@@ -1,0 +1,11 @@
+.Header {
+    display: flex;
+    align-items: center
+}
+
+.logo {
+    padding-left: 22px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #28607F
+}

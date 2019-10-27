@@ -1,0 +1,42 @@
+
+.MapContainerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.taskPanel {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+ }
+
+.ppp {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.taskItemLI {
+    border-top: 1px solid #cccccc;
+
+}
+
+.formItems {
+    padding-bottom: 10px;
+}
+
+button {
+    background-color: #28607F; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
