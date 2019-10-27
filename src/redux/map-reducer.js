@@ -17,7 +17,8 @@ let initialState = {
     testData: [{tsk: "tsk1", time: '1995-12-19T03:24:00'}, {tsk: "tsk2", time: '2019-10-25T21:29:00'}, {
         tsk: "tsk3",
         time: '2019-10-25T22:28:00'
-    }]
+    }],
+    xxx: 4
 };
 
 let mapReducer = (state = initialState, action) => {
@@ -26,11 +27,10 @@ let mapReducer = (state = initialState, action) => {
             return {
                 ...state,
                 tasks: [...state.tasks, {
-                    address: action.address,
                     selectedEmployee: action.selectedEmployee,
                     empTask: action.empTask,
                     taskTime: action.taskTime,
-                    coords: state.addressTemp
+                    address: action.taskAddress
                 }],
                 addressTemp: []
             };
@@ -55,34 +55,35 @@ export const setAddress = (address, coordPointAdd) => {
         address,
         coordPointAdd
     }
-}
+};
 
 export const delCoordPoint = (pointId) => {
     return {
         type: DEL_COORD_POINT,
         pointId
     }
-}
+};
 
-export const sendData = (address, selectedEmployee, empTask, taskTime) => {
+export const setData = ( selectedEmployee, empTask, taskTime, taskAddress) => {
     return {
         type: SEND_DATA,
-        address,
         selectedEmployee,
         empTask,
-        taskTime
+        taskTime,
+        taskAddress
     }
-}
+};
 
 export const getAddress = (coordPointAdd) => {
     return (dispatch) => {
         taskAPI.geodecode(coordPointAdd).then(response => {
             let address = response.data.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
-            //console.log(response.data.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text)
             dispatch(setAddress(address, coordPointAdd))
         })
     }
-}
+};
+
+//return list of tasks
 
 
 export default mapReducer;

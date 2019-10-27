@@ -2,15 +2,13 @@ import * as axios from "axios";
 
 const instance =  axios.create({
     withCredentials: true,
-    baseURL: 'http://',
+    baseURL: 'localhost',
     headers: {}
 });
 
 export const taskAPI = {
-    getTaskData() {
-        return instance.get(``).then(response => {
-            return response.data
-        })
+    sendTask(address, selectedEmployee, empTask, taskTime) {
+        return instance.post(``, {address, selectedEmployee, empTask, taskTime});
     },
 
     geodecode(coordPoint) {

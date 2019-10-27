@@ -1,11 +1,12 @@
 import React, {Component} from "react";
 import "./Map.css"
 import {connect} from "react-redux";
-import {delCoordPoint, getAddress, sendData} from "../../redux/map-reducer";
-import {Field, reduxForm} from "redux-form";
-import {renderDateTimePicker} from "../TaskPanel/common/DateTimePicker/renderDateTimePicker";
+import {delCoordPoint, getAddress, setData} from "../../redux/map-reducer";
+import {Field, Form, reduxForm} from "redux-form";
+import {renderDateTimePicker} from "../TaskPanel/common/ReduxFormComponents/DateTimePicker/renderDateTimePicker";
 import YandexMaps from "./Map";
 import "./MapContainer.css"
+import MyCustomInput from "../TaskPanel/common/ReduxFormComponents/CoordAddressComponent/renderCoordAddress";
 
 
 class MapContainer extends Component {
@@ -17,15 +18,14 @@ class MapContainer extends Component {
     render() {
 console.log("RENDERED")
         const onSubmit = (formData) => {
-    console.log(typeof(formData.taskTime))
-            this.props.sendData(formData.address, formData.selectedEmployee, formData.empTask, formData.taskTime)
+            this.props.setData(formData.selectedEmployee, formData.empTask, formData.taskTime, formData.taskAddress)
         }
 
         return (
             <div className="MapContainerWrapper">
                 <div className="taskPanel">
                         <h3 style={{color: "#414141"}}>Add Task</h3>
-                        <TaskReduxForm {...this.props} onSubmit={onSubmit}/>
+                        <TaskReduxForm initialValues={{ taskAddress: this.props.addressTemp }}  w={this.props.workers} onSubmit={onSubmit}/>
                         <h3 style={{color: "#414141"}}>Tasks</h3>
                        {/* {this.props.testData.map(td => (new Date(td.time) > new Date())
                             ? <div>{td.tsk}</div>
@@ -36,7 +36,7 @@ console.log("RENDERED")
                                     <ul className="taskItemUL">
                                         <li>Task - {t.empTask}</li>
                                         <li>Worker - {t.selectedEmployee}</li>
-                                        <li>Address - {t.coords.map(c => c.address)}</li>
+                                        <li>Address - {t.address.map(c => c.address)}</li>
                                         <li>Deadline - {String(t.taskTime)}</li>
                                     </ul>
                                 </li>)}
@@ -50,31 +50,34 @@ console.log("RENDERED")
 }
 
 const TaskForm = (props) => {
-    return <form className="ppp" onSubmit={props.handleSubmit}>
+    return <Form className="ppp" onSubmit={props.handleSubmit} >
         <div className="formItems">
             <Field style={{width: "98%"}} placeholder={"Enter task..."} name={"empTask"} component={"textarea"}/>
         </div>
         <div className="formItems">
             <Field style={{width: "100%"}} name="selectedEmployee" component="select">
                 <option value="">Select employee...</option>
-                {props.workers.map(w => (
+                {props.w.map(w => (
                     <option value={w.name} key={w.name}>
                         {w.name}
                     </option>
-                ))}
+                ))}*
             </Field>
         </div>
         <div className="formItems">
             <Field name={"taskTime"} showTime={true} component={renderDateTimePicker}/>
         </div>
-
+        <div className="formItems">
+            <h3>Выберите место на карте</h3>
+            <Field name={"taskAddress"} component={MyCustomInput}/>
+        </div>
                 <button>Create Task</button>
-
-    </form>
+    </Form>
 }
 
 const TaskReduxForm = reduxForm({
-    form: 'task'
+    form: 'task',
+enableReinitialize: true,
 })(TaskForm)
 
 const mapStateToProps = (state) => ({
@@ -82,7 +85,8 @@ const mapStateToProps = (state) => ({
     workers: state.mapReducer.workers,
     tasks: state.mapReducer.tasks,
     testData: state.mapReducer.testData,
-    addressTemp: state.mapReducer.addressTemp
+    addressTemp: state.mapReducer.addressTemp,
+    xxx: state.mapReducer.xxx
 })
 
-export default connect(mapStateToProps, {getAddress, delCoordPoint, sendData})(MapContainer);
+export default connect(mapStateToProps, {getAddress, delCoordPoint, setData})(MapContainer);
