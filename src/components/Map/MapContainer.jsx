@@ -30,17 +30,17 @@ console.log("RENDERED")
                        {/* {this.props.testData.map(td => (new Date(td.time) > new Date())
                             ? <div>{td.tsk}</div>
                             : <div>Время истекло</div>)}*/}
-                        <ul>
+                        <div className="tasks">
                             {this.props.tasks.map(t =>
-                                <li className="taskItemLI">
+                                <div className="taskItemLI">
                                     <ul className="taskItemUL">
                                         <li>Task - {t.empTask}</li>
                                         <li>Worker - {t.selectedEmployee}</li>
                                         <li>Address - {t.address.map(c => c.address)}</li>
                                         <li>Deadline - {String(t.taskTime)}</li>
                                     </ul>
-                                </li>)}
-                        </ul>
+                                </div>)}
+                        </div>
 
                 </div> {/*Task panel*/}
                     <YandexMaps {...this.props}/> {/*map*/}
