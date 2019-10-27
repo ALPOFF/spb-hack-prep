@@ -27,12 +27,10 @@ console.log("RENDERED")
                         <h3 style={{color: "#414141"}}>Add Task</h3>
                         <TaskReduxForm initialValues={{ taskAddress: this.props.addressTemp }}  w={this.props.workers} onSubmit={onSubmit}/>
                         <h3 style={{color: "#414141"}}>Tasks</h3>
-                       {/* {this.props.testData.map(td => (new Date(td.time) > new Date())
-                            ? <div>{td.tsk}</div>
-                            : <div>Время истекло</div>)}*/}
                         <div className="tasks">
-                            {this.props.tasks.map(t =>
-                                <div className="taskItemLI">
+                            {this.props.tasks.map(t => (new Date(t.taskTime) < new Date())
+                                ? <div>Время истекло</div>
+                                : <div className="taskItemLI">
                                     <ul className="taskItemUL">
                                         <li>Task - {t.empTask}</li>
                                         <li>Worker - {t.selectedEmployee}</li>
