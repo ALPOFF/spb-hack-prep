@@ -7,6 +7,13 @@ import {renderDateTimePicker} from "../TaskPanel/common/ReduxFormComponents/Date
 import YandexMaps from "./Map";
 import "./MapContainer.css"
 import MyCustomInput from "../TaskPanel/common/ReduxFormComponents/CoordAddressComponent/renderCoordAddress";
+import {
+    getAddressTempSelector,
+    getCoordTempSelector,
+    getTasksSelector,
+    getTestDataSelector,
+    getWorkersSelector
+} from "../../redux/map-selectors";
 
 
 class MapContainer extends Component {
@@ -84,12 +91,17 @@ const TaskReduxForm = reduxForm({
 })(TaskForm)
 
 const mapStateToProps = (state) => ({
-    coordsTemp: state.mapReducer.coordsTemp,
-    workers: state.mapReducer.workers,
-    tasks: state.mapReducer.tasks,
-    testData: state.mapReducer.testData,
-    addressTemp: state.mapReducer.addressTemp,
-    xxx: state.mapReducer.xxx
+    coordsTemp: getCoordTempSelector(state),
+    workers: getWorkersSelector(state),
+    tasks: getTasksSelector(state),
+    testData: getTestDataSelector(state),
+    addressTemp: getAddressTempSelector(state)
 })
 
-export default connect(mapStateToProps, {getAddress, delCoordPoint, setData, requestWorkers, requestTasks})(MapContainer);
+export default connect(mapStateToProps, {
+    getAddress,
+    delCoordPoint,
+    setData,
+    requestWorkers,
+    requestTasks
+})(MapContainer);
