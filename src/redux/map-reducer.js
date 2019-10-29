@@ -1,26 +1,27 @@
 import {taskAPI} from "../api/api";
 
-const DEL_COORD_POINT = 'DEL_COORD_POINT';
-const SET_TASK = 'SET_TASK';
-const SET_ADDRESS = 'SET_ADDRESS';
-const SET_TASKS_ARR = 'SET_TASKS_ARR';
-const SET_WORKERS = 'SET_WORKERS'
+const DEL_COORD_POINT = 'map/DEL_COORD_POINT';
+const SET_TASK = 'map/SET_TASK';
+const SET_ADDRESS = 'map/SET_ADDRESS';
+const SET_TASKS_ARR = 'map/SET_TASKS_ARR';
+const SET_WORKERS = 'map/SET_WORKERS';
+const TASK_FILTER = 'map/TASK_FILTER'
 
 let initialState = {
     coordsTemp: [],
     addressTemp: [],
     workers: [
-        {name: "Lex"},
-        {name: "Lev"},
-        {name: "Nik"},
-        {name: "Lis"}
+        {id: 0, name: "Lex"},
+        {id: 1, name: "Lev"},
+        {id: 2, name: "Nik"},
+        {id: 3, name: "Lis"}
     ],
     tasks: [],
     testData: [{tsk: "tsk1", time: '1995-12-19T03:24:00'}, {tsk: "tsk2", time: '2019-10-25T21:29:00'}, {
         tsk: "tsk3",
         time: '2019-10-25T22:28:00'
     }],
-    xxx: 4
+    filteredTasks: []
 };
 
 let mapReducer = (state = initialState, action) => {
@@ -36,7 +37,7 @@ let mapReducer = (state = initialState, action) => {
                 }],
                 addressTemp: []
             };
-            case SET_TASKS_ARR:
+        case SET_TASKS_ARR:
             return {
                 ...state,
                 tasks: action.tasks
@@ -51,13 +52,25 @@ let mapReducer = (state = initialState, action) => {
                 ...state,
                 addressTemp: [...state.addressTemp, {address: action.address, coords: action.coordPointAdd}]
             };
-            case SET_WORKERS:
+        case SET_WORKERS:
             return {
                 ...state,
                 workers: action.workers
             };
+        case TASK_FILTER:
+            return {
+                ...state,
+                filteredTasks: state.tasks.filter(t => t.selectedEmployee === action.id)
+            };
         default:
             return state
+    }
+};
+
+export const taskFilter = (id) => {
+    return {
+        type: TASK_FILTER,
+        id
     }
 };
 

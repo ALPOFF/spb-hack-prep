@@ -31,15 +31,12 @@ let YandexMaps = (props) => {
         if (searchControlRef.current) {
             // Тут вызвать метод который наиболее подходит
             // https://tech.yandex.ru/maps/jsapi/doc/2.1/ref/reference/control.SearchControl-docpage/
-            //console.log(searchControlRef.current.getResponseMetaData());
             let b = searchControlRef.current.getMap();
             console.log(b)
-            //console.log(searchControlRef.current.getResultsArray());
         }
     };
 
     return (
-
         <YMaps  enterprise
                query={{
                    apikey: 'a2b8af4a-0675-4706-aafc-c386bc1661ee',
@@ -57,7 +54,6 @@ let YandexMaps = (props) => {
             </Map>
             </div>
         </YMaps>
-
     )
 }
 

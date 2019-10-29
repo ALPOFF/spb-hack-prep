@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="412cb5e7-29a4-4249-a84d-4822204a275c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map/MapContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/MapContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map/MapContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/MapContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map/Map.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/Map.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/Map.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map/MapContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map/MapContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/map-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MapContainer/TaskFilterForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/map-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/map-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/map-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/map-selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +41,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Хакатон\spbprep\src\containers\MapContainer" />
+      <recent name="D:\Хакатон\spbprep\src" />
       <recent name="D:\Хакатон\spbprep\src\components\TaskPanel\common\ReduxFormComponents" />
       <recent name="D:\Хакатон\spbprep\src\redux\actions" />
     </key>
@@ -75,6 +81,7 @@
       <workItem from="1572193628391" duration="21687000" />
       <workItem from="1572275226920" duration="1244000" />
       <workItem from="1572276487132" duration="368000" />
+      <workItem from="1572313826346" duration="4803000" />
     </task>
     <servers />
   </component>

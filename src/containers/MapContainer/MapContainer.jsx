@@ -1,19 +1,21 @@
 import React, {Component} from "react";
-import "./Map.css"
+import "../../components/Map/Map.css"
 import {connect} from "react-redux";
-import {delCoordPoint, getAddress, requestTasks, requestWorkers, setData} from "../../redux/map-reducer";
+import {delCoordPoint, getAddress, requestTasks, requestWorkers, setData, taskFilter} from "../../redux/map-reducer";
 import {Field, Form, reduxForm} from "redux-form";
-import {renderDateTimePicker} from "../TaskPanel/common/ReduxFormComponents/DateTimePicker/renderDateTimePicker";
-import YandexMaps from "./Map";
 import "./MapContainer.css"
-import MyCustomInput from "../TaskPanel/common/ReduxFormComponents/CoordAddressComponent/renderCoordAddress";
 import {
     getAddressTempSelector,
-    getCoordTempSelector,
+    getCoordTempSelector, getFilteredTasks,
     getTasksSelector,
     getTestDataSelector,
     getWorkersSelector
 } from "../../redux/map-selectors";
+import MyCustomInput
+    from "../../components/TaskPanel/common/ReduxFormComponents/CoordAddressComponent/renderCoordAddress";
+import {renderDateTimePicker} from "../../components/TaskPanel/common/ReduxFormComponents/DateTimePicker/renderDateTimePicker";
+import YandexMaps from "../../components/Map/Map";
+import TaskFilterReduxForm from "./TaskFilterForm";
 
 
 class MapContainer extends Component {
@@ -26,17 +28,19 @@ class MapContainer extends Component {
 
     render() {
         console.log("RENDERED")
-        const onSubmit = (formData) => {
+        const onSubmitTask = (formData) => {
             this.props.setData(formData.selectedEmployee, formData.empTask, formData.taskTime, formData.taskAddress)
-        }
+        };
+
 
         return (
             <div className="MapContainerWrapper">
                 <div className="taskPanel">
                     <h3 style={{color: "#414141"}}>Add Task</h3>
                     <TaskReduxForm initialValues={{taskAddress: this.props.addressTemp}} w={this.props.workers}
-                                   onSubmit={onSubmit}/>
-                    <h3 style={{color: "#414141"}}>Tasks</h3>
+                                   onSubmit={onSubmitTask}/>
+                    <h3 style={{color: "#414141"}}>All Tasks</h3>
+                    <TaskFilterReduxForm w={this.props.workers} filteredTasks={this.props.filteredTasks} taskFilter={this.props.taskFilter}/>
                     <div className="tasks">
                         {this.props.tasks.map(t => (new Date(t.taskTime) < new Date())
                             ? <div>Время истекло</div>
@@ -49,8 +53,6 @@ class MapContainer extends Component {
                                 </ul>
                             </div>)}
                     </div>
-
-
                 </div>
                 {/*Task panel*/}
                 <YandexMaps {...this.props}/> {/*map*/}
@@ -83,25 +85,27 @@ const TaskForm = (props) => {
         </div>
         <button>Create Task</button>
     </Form>
-}
+};
 
 const TaskReduxForm = reduxForm({
     form: 'task',
     enableReinitialize: true,
-})(TaskForm)
+})(TaskForm);
 
 const mapStateToProps = (state) => ({
     coordsTemp: getCoordTempSelector(state),
     workers: getWorkersSelector(state),
     tasks: getTasksSelector(state),
     testData: getTestDataSelector(state),
-    addressTemp: getAddressTempSelector(state)
-})
+    addressTemp: getAddressTempSelector(state),
+    filteredTasks: getFilteredTasks(state)
+});
 
 export default connect(mapStateToProps, {
     getAddress,
     delCoordPoint,
     setData,
     requestWorkers,
-    requestTasks
+    requestTasks,
+    taskFilter
 })(MapContainer);
