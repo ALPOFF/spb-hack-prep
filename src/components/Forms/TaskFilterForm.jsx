@@ -1,16 +1,15 @@
 import React from "react";
-import {Field, Form, reduxForm} from "redux-form";
 
-const TaskFilterForm = (props) => {
+const TaskFilterForm = ({w, filteredTasks, taskFilter}) => {
     let onChangeFilter = (e) => {
         let id = e.currentTarget.value;
-        props.taskFilter(id)
+        taskFilter(id)
     }
     return <div>
         <select onChange={onChangeFilter}>
             <option value="">Select worker for filtering ...</option>
             <option value="all_tasks">Show All Tasks</option>
-            {props.w.map(w => (
+            {w.map(w => (
                 <option value={w.name} key={w.name}>
                     {w.name}
                 </option>
@@ -18,9 +17,9 @@ const TaskFilterForm = (props) => {
         </select>
 
         <div className="tasks">
-            {props.filteredTasks.map(t => (new Date(t.taskTime) < new Date())
-                ? <div>Время истекло</div>
-                : <div className="taskItemLI">
+            {filteredTasks.map(t => (new Date(t.taskTime) < new Date())
+                ? <div key={t.name}>Время истекло</div>
+                : <div key={t.name} className="taskItemLI">
                     <ul className="taskItemUL">
                     </ul>
                     <ul>

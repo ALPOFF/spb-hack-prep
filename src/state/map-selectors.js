@@ -1,5 +1,3 @@
-import {createSelector} from "reselect";
-
 export const getCoordTempSelector = (state) => {
     return state.mapReducer.coordsTemp
 };

@@ -6,13 +6,8 @@ import Header from "./components/Header/Header";
 const App = (props) => {
   return (
     <div className="wrapper">
-
             <Header classname="Header" />
-
-
             <MapContainer />
-
-
     </div>
   );
 }

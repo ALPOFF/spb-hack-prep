@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import {Map, Placemark, SearchControl, YMaps} from "react-yandex-maps";
 import "./Map.css";
 
-let YandexMaps = (props) => {
+let YandexMaps = ({getAddress, delCoordPoint, addressTemp, testData}) => {
     const searchControlRef = useRef(null);
 
     const placeMark = {
@@ -19,12 +19,12 @@ let YandexMaps = (props) => {
 
     let setCoordPoint = (e) => {
         let coordPoint = e.get("coords");
-        props.getAddress(coordPoint);
+        getAddress(coordPoint);
     }
 
     let removeCoordPoint = (e) => {
         let pointId = e.get('target').geometry._coordinates;
-        props.delCoordPoint(pointId)
+        delCoordPoint(pointId)
     }
 
     const onResultShow = () => {
@@ -43,11 +43,11 @@ let YandexMaps = (props) => {
                }}>
             <div className="htm">
               <Map className="content_map" onClick={setCoordPoint} defaultState={{center: [59.927575, 30.326017], zoom: 9}} >
-                {props.addressTemp.map(u =>
+                {addressTemp.map(u =>
                     <Placemark onClick={removeCoordPoint} geometry={u.coords} {...placeMark} />
                 )}
 
-                {props.testData.map(u =>
+                {testData.map(u =>
                     <Placemark geometry={u.coords} {...placeMark} />
                 )}
                 <SearchControl onResultShow={onResultShow} instanceRef={searchControlRef} options={{float: 'left', noPlacemark: true}}/>

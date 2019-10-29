@@ -124,7 +124,7 @@ export const getAddress = (coordPointAdd) => {
     }
 };
 
-//send task to server + set task in redux store
+//send task to server + set task in state store
 export const setTask = (selectedEmployee, empTask, taskTime, taskAddress) => {
     return (dispatch) => {
         taskAPI.sendTask(selectedEmployee, empTask, taskTime, taskAddress).then(response => {
