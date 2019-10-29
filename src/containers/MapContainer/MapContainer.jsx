@@ -41,18 +41,6 @@ class MapContainer extends Component {
                                    onSubmit={onSubmitTask}/>
                     <h3 style={{color: "#414141"}}>All Tasks</h3>
                     <TaskFilterReduxForm w={this.props.workers} filteredTasks={this.props.filteredTasks} taskFilter={this.props.taskFilter}/>
-                    <div className="tasks">
-                        {this.props.tasks.map(t => (new Date(t.taskTime) < new Date())
-                            ? <div>Время истекло</div>
-                            : <div className="taskItemLI">
-                                <ul className="taskItemUL">
-                                    <li>Task - {t.empTask}</li>
-                                    <li>Worker - {t.selectedEmployee}</li>
-                                    <li>Address - {t.address.map(c => c.address)}</li>
-                                    <li>Deadline - {String(t.taskTime)}</li>
-                                </ul>
-                            </div>)}
-                    </div>
                 </div>
                 {/*Task panel*/}
                 <YandexMaps {...this.props}/> {/*map*/}

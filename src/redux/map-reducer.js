@@ -60,7 +60,9 @@ let mapReducer = (state = initialState, action) => {
         case TASK_FILTER:
             return {
                 ...state,
-                filteredTasks: state.tasks.filter(t => t.selectedEmployee === action.id)
+                filteredTasks: (action.id === 'all_tasks')
+                    ? state.tasks
+                    : state.tasks.filter(t => t.selectedEmployee === action.id)
             };
         default:
             return state
