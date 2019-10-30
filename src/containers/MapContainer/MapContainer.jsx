@@ -33,15 +33,14 @@ class MapContainer extends Component {
         return (
             <div className="MapContainerWrapper">
                 <div className="taskPanel">
-                    <h3 style={{color: "#414141"}}>Add Task</h3>
+                    <h3>Add Task</h3>
                     <TaskReduxForm initialValues={{taskAddress: addressTemp}} w={workers}
                                    onSubmit={onSubmitTask}/>
-                    <h3 style={{color: "#414141"}}>All Tasks</h3>
+                    <h3>All Tasks</h3>
                     <TaskFilterReduxForm w={workers} filteredTasks={filteredTasks}
                                          taskFilter={taskFilter}/>
                 </div>
-                {/*Task panel*/}
-                <YandexMaps {...this.props}/> {/*map*/}
+                <YandexMaps {...this.props}/>
             </div>
         )
     }

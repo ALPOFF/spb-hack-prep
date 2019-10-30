@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/spbprep.iml" filepath="$PROJECT_DIR$/.idea/spbprep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spb-hack-prep.iml" filepath="$PROJECT_DIR$/.idea/spb-hack-prep.iml" />
     </modules>
   </component>
 </project>

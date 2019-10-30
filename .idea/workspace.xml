@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="412cb5e7-29a4-4249-a84d-4822204a275c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Forms/TaskReduxForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Forms/TaskFilterForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/spbprep.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.cdc90be5.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/2.cdc90be5.chunk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/TaskFilterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/TaskFilterForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/TaskReduxForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/TaskReduxForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Map/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/Map.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskPanel/common/ReduxFormComponents/CoordAddressComponent/renderCoordAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskPanel/common/ReduxFormComponents/CoordAddressComponent/renderCoordAddress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskPanel/common/ReduxFormComponents/DateTimePicker/renderDateTimePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskPanel/common/ReduxFormComponents/DateTimePicker/renderDateTimePicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/MapContainer/TaskFilterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/TaskFilterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/map-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/map-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/map-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/map-selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/redux-store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +31,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../social-less" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -83,6 +87,7 @@
       <workItem from="1572275226920" duration="1244000" />
       <workItem from="1572276487132" duration="368000" />
       <workItem from="1572313826346" duration="7461000" />
+      <workItem from="1572361912059" duration="3860000" />
     </task>
     <servers />
   </component>

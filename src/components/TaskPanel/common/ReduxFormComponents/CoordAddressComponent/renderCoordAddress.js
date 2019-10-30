@@ -8,6 +8,6 @@ const MyCustomInput = (props) => {
             </ul>
         </div>
     )
-}
+};
 
 export default MyCustomInput

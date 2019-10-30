@@ -1,11 +1,12 @@
 import React from "react";
+import styles from "./TaskFilterForm.module.css"
 
 const TaskFilterForm = ({w, filteredTasks, taskFilter}) => {
     let onChangeFilter = (e) => {
         let id = e.currentTarget.value;
         taskFilter(id)
     }
-    return <div>
+    return <div className={styles.ppp}>
         <select onChange={onChangeFilter}>
             <option value="">Select worker for filtering ...</option>
             <option value="all_tasks">Show All Tasks</option>

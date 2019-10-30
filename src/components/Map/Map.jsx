@@ -20,12 +20,12 @@ let YandexMaps = ({getAddress, delCoordPoint, addressTemp, testData}) => {
     let setCoordPoint = (e) => {
         let coordPoint = e.get("coords");
         getAddress(coordPoint);
-    }
+    };
 
     let removeCoordPoint = (e) => {
         let pointId = e.get('target').geometry._coordinates;
         delCoordPoint(pointId)
-    }
+    };
 
     const onResultShow = () => {
         if (searchControlRef.current) {
@@ -55,6 +55,6 @@ let YandexMaps = ({getAddress, delCoordPoint, addressTemp, testData}) => {
             </div>
         </YMaps>
     )
-}
+};
 
 export default YandexMaps;
