@@ -137,6 +137,7 @@ export const setTask = (selectedEmployee, empTask, taskTime, taskAddress) => {
 export const requestTasks = () => {
     return (dispatch) => {
         taskAPI.getTasks().then(response => {
+            console.log(response.data);
             dispatch(setTasksArr(response.data))
         })
     }
@@ -146,6 +147,7 @@ export const requestTasks = () => {
 export const requestWorkers = () => {
     return (dispatch) => {
         taskAPI.getWorkers().then(response => {
+            console.log(response.data);
             dispatch(setWorkers(response.data))
         })
     }
