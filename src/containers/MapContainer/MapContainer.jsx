@@ -18,6 +18,7 @@ import TaskReduxForm from "../../components/Forms/TaskReduxForm"
 class MapContainer extends Component {
 
     componentDidMount() {
+
         //setInterval(() => {this.setState({a:12})}, 3000)
         let {requestWorkers, requestTasks} = this.props;
         requestWorkers();

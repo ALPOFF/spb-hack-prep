@@ -16,7 +16,7 @@ export const taskAPI = {
     },
 
     getWorkers() {
-        return instance.get(``);
+        return instance.get(``, {id: "*"});
     },
 
     geodecode(coordPoint) {

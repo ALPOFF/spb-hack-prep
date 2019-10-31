@@ -141,7 +141,7 @@ export const requestTasks = () => {
             dispatch(setTasksArr(response.data))
         })
     }
-}
+};
 
 //request list of workers
 export const requestWorkers = () => {
@@ -151,6 +151,6 @@ export const requestWorkers = () => {
             dispatch(setWorkers(response.data))
         })
     }
-}
+};
 
 export default mapReducer;
