@@ -12,7 +12,7 @@ export const taskAPI = {
     },
 
     getTasks() {
-        return instance.get(``);
+        return axios.get(`http://127.0.0.1:8000/task/`);
     },
 
     getWorkers() {
