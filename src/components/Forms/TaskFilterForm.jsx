@@ -18,7 +18,7 @@ const TaskFilterForm = ({w, filteredTasks, taskFilter}) => {
         </select>
 
         <div className="tasks">
-            {filteredTasks.map(t => (new Date(t.taskTime) < new Date())
+            {filteredTasks.map(t => (new Date(t.deadline) < new Date())
                 ? <div key={t.name}>Время истекло</div>
                 : <div key={t.name} className="taskItemLI">
                     <ul className="taskItemUL">
@@ -27,7 +27,7 @@ const TaskFilterForm = ({w, filteredTasks, taskFilter}) => {
                         <li>Task - {t.description}</li>
                         <li>Worker - {t.selectedEmployee}</li>
                         <li>Address - {t.address.map(c => c.address)}</li>
-                        <li>Deadline - {String(t.taskTime)}</li>
+                        <li>Deadline - {String(t.deadline)}</li>
                     </ul>
                 </div>)}
         </div>

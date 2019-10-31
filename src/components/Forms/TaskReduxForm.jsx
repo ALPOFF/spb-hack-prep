@@ -20,7 +20,7 @@ const TaskForm = ({handleSubmit, w}) => {
             </Field>
         </div>
         <div className="formItems">
-            <Field name={"taskTime"} showTime={true} component={renderDateTimePicker}/>
+            <Field name={"deadline"} showTime={true} component={renderDateTimePicker}/>
         </div>
         <div className="formItems">
             <h3>Выберите место на карте</h3>
