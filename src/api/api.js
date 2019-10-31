@@ -7,8 +7,8 @@ const instance =  axios.create({
 });
 
 export const taskAPI = {
-    sendTask(selectedEmployee, empTask, taskTime, taskAddress) {
-        return instance.post(``, {selectedEmployee, empTask, taskTime, taskAddress});
+    sendTask(selectedEmployee, description, taskTime, taskAddress) {
+        return instance.post(``, {selectedEmployee, description, taskTime, taskAddress});
     },
 
     getTasks() {

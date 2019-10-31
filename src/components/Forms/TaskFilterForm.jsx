@@ -24,7 +24,7 @@ const TaskFilterForm = ({w, filteredTasks, taskFilter}) => {
                     <ul className="taskItemUL">
                     </ul>
                     <ul>
-                        <li>Task - {t.empTask}</li>
+                        <li>Task - {t.description}</li>
                         <li>Worker - {t.selectedEmployee}</li>
                         <li>Address - {t.address.map(c => c.address)}</li>
                         <li>Deadline - {String(t.taskTime)}</li>

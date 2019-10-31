@@ -31,7 +31,7 @@ let mapReducer = (state = initialState, action) => {
                 ...state,
                 tasks: [...state.tasks, {
                     selectedEmployee: action.selectedEmployee,
-                    empTask: action.empTask,
+                    description: action.description,
                     taskTime: action.taskTime,
                     address: action.taskAddress
                 }],
@@ -91,11 +91,11 @@ export const delCoordPoint = (pointId) => {
     }
 };
 
-export const setData = (selectedEmployee, empTask, taskTime, taskAddress) => {
+export const setData = (selectedEmployee, description, taskTime, taskAddress) => {
     return {
         type: SET_TASK,
         selectedEmployee,
-        empTask,
+        description,
         taskTime,
         taskAddress
     }
@@ -125,10 +125,10 @@ export const getAddress = (coordPointAdd) => {
 };
 
 //send task to server + set task in state store
-export const setTask = (selectedEmployee, empTask, taskTime, taskAddress) => {
+export const setTask = (selectedEmployee, description, taskTime, taskAddress) => {
     return (dispatch) => {
-        taskAPI.sendTask(selectedEmployee, empTask, taskTime, taskAddress).then(response => {
-            dispatch(setData(selectedEmployee, empTask, taskTime, taskAddress))
+        taskAPI.sendTask(selectedEmployee, description, taskTime, taskAddress).then(response => {
+            dispatch(setData(selectedEmployee, description, taskTime, taskAddress))
         })
     }
 };
