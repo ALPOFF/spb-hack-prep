@@ -1,8 +1,8 @@
 import * as axios from "axios";
 
 const instance =  axios.create({
-    withCredentials: true,
-    baseURL: '',
+    withCredentials: false,
+    baseURL: 'http://127.0.0.1:8000/',
     headers: {}
 });
 
@@ -16,7 +16,7 @@ export const taskAPI = {
     },
 
     getWorkers() {
-        return axios.get(`http://127.0.0.1:8000/worker/`, {id: "*"});
+        return instance.get(`worker/`, {id: "*"});
     },
 
     geodecode(coordPoint) {
