@@ -6,8 +6,8 @@ import styles from "./TaskFilterForm.module.css"
 
 const TaskForm = ({handleSubmit, w}) => {
     return <Form className={styles.ppp} onSubmit={handleSubmit}>
-        <div className="formItems">
-            <Field placeholder={"Enter name task..."} name={"taskName"} component={"input"}/>
+        <div className="formItems" >
+            <Field placeholder={"Enter title of task..."} name={"taskName"} component={"input"}/>
         </div>
         <div className="formItems">
             <Field placeholder={"Enter task..."} name={"description"} component={"textarea"}/>
