@@ -2,21 +2,21 @@ import * as axios from "axios";
 
 const instance =  axios.create({
     withCredentials: true,
-    baseURL: '',
+    baseURL: 'https://geotestback.herokuapp.com/',
     headers: {}
 });
 
 export const taskAPI = {
     sendTask(selectedEmployee, description, deadline, taskAddress) {
-        return instance.post(``, {selectedEmployee, description, deadline, taskAddress});
+        return axios.post(`https://geotestback.herokuapp.com/`, {selectedEmployee: selectedEmployee, description: description, deadline: deadline, taskAddress: taskAddress});
     },
 
     getTasks() {
-        return axios.get(`http://127.0.0.1:8000/task/`);
+        return axios.get(`https://geotestback.herokuapp.com/task/`);
     },
 
     getWorkers() {
-        return axios.get(`http://127.0.0.1:8000/worker/`, { params: {id: "*"}});
+        return axios.get(`https://geotestback.herokuapp.com/worker/`, { params: {id: "*"}});
     },
 
     geodecode(coordPoint) {

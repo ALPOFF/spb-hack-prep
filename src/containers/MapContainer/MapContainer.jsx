@@ -1,7 +1,15 @@
 import React, {Component} from "react";
 import "../../components/Map/Map.css"
 import {connect} from "react-redux";
-import {delCoordPoint, getAddress, requestTasks, requestWorkers, setData, taskFilter} from "../../state/map-reducer";
+import {
+    delCoordPoint,
+    getAddress,
+    requestTasks,
+    requestWorkers,
+    setData,
+    setTask,
+    taskFilter
+} from "../../state/map-reducer";
 import "./MapContainer.css"
 import {
     getAddressTempSelector,
@@ -28,7 +36,7 @@ class MapContainer extends Component {
     render() {
         console.log("RENDERED")
         const onSubmitTask = (formData) => {
-            this.props.setData(formData.selectedEmployee, formData.description, formData.deadline, formData.taskAddress)
+            this.props.setTask(formData.selectedEmployee, formData.description, formData.deadline, formData.taskAddress)
         };
         let {addressTemp, workers, filteredTasks, taskFilter} = this.props;
         return (
@@ -62,5 +70,6 @@ export default connect(mapStateToProps, {
     setData,
     requestWorkers,
     requestTasks,
-    taskFilter
+    taskFilter,
+    setTask
 })(MapContainer);
