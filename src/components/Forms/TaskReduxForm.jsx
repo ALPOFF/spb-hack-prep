@@ -13,7 +13,7 @@ const TaskForm = ({handleSubmit, w}) => {
             <Field placeholder={"Enter task..."} name={"description"} component={"textarea"}/>
         </div>
         <div className="formItems">
-            <Field name="selectedEmployee" component="select">
+            <Field name="idWorker" component="select">
                 <option value="">Select employee...</option>
                 {w.map(w => (
                     <option value={w.id} key={w.name}>
