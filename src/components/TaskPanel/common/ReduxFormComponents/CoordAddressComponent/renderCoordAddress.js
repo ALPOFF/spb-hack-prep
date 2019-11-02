@@ -4,7 +4,7 @@ const MyCustomInput = (props) => {
     return (
         <div className="tasks">
             <ul onChange={e => props.input.onChange(e)}>
-                {props.input.value.map(v => <li>{v.address}</li>)}
+                {props.input.value.address}
             </ul>
         </div>
     )

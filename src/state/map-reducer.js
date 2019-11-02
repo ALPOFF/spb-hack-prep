@@ -9,7 +9,7 @@ const TASK_FILTER = 'map/TASK_FILTER'
 
 let initialState = {
     coordsTemp: [],
-    addressTemp: [],
+    addressTemp: {},
     workers: [
         {id: 0, name: "Lex"},
         {id: 1, name: "Lev"},
@@ -50,7 +50,7 @@ let mapReducer = (state = initialState, action) => {
         case SET_ADDRESS:
             return {
                 ...state,
-                addressTemp: [...state.addressTemp, {address: action.address, coords: action.coordPointAdd}]
+                addressTemp: {address: action.address, coords: action.coordPointAdd}
             };
         case SET_WORKERS:
             return {

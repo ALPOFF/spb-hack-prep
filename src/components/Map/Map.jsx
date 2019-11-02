@@ -43,9 +43,9 @@ let YandexMaps = ({getAddress, delCoordPoint, addressTemp, testData}) => {
                }}>
             <div className="htm">
               <Map className="content_map" onClick={setCoordPoint} defaultState={{center: [59.927575, 30.326017], zoom: 9}} >
-                {addressTemp.map(u =>
-                    <Placemark onClick={removeCoordPoint} geometry={u.coords} {...placeMark} />
-                )}
+
+                    <Placemark onClick={removeCoordPoint} geometry={addressTemp.coords} {...placeMark} />
+
 
                 {testData.map(u =>
                     <Placemark geometry={u.coords} {...placeMark} />
