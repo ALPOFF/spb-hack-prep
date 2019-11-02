@@ -7,13 +7,16 @@ import styles from "./TaskFilterForm.module.css"
 const TaskForm = ({handleSubmit, w}) => {
     return <Form className={styles.ppp} onSubmit={handleSubmit}>
         <div className="formItems">
+            <Field placeholder={"Enter name task..."} name={"taskName"} component={"input"}/>
+        </div>
+        <div className="formItems">
             <Field placeholder={"Enter task..."} name={"description"} component={"textarea"}/>
         </div>
         <div className="formItems">
             <Field name="selectedEmployee" component="select">
                 <option value="">Select employee...</option>
                 {w.map(w => (
-                    <option value={w.name} key={w.name}>
+                    <option value={w.id} key={w.name}>
                         {w.name}
                     </option>
                 ))}

@@ -43,13 +43,13 @@ let YandexMaps = ({getAddress, delCoordPoint, addressTemp, testData}) => {
                }}>
             <div className="htm">
               <Map className="content_map" onClick={setCoordPoint} defaultState={{center: [59.927575, 30.326017], zoom: 9}} >
+                    {(addressTemp.coords != []) &&
+                    <Placemark onClick={removeCoordPoint} geometry={addressTemp.coords} {...placeMark} />}
 
-                    <Placemark onClick={removeCoordPoint} geometry={addressTemp.coords} {...placeMark} />
 
-
-                {testData.map(u =>
+            {/*    {testData.map(u =>
                     <Placemark geometry={u.coords} {...placeMark} />
-                )}
+                )}*/}
                 <SearchControl onResultShow={onResultShow} instanceRef={searchControlRef} options={{float: 'left', noPlacemark: true}}/>
             </Map>
             </div>

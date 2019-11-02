@@ -11,7 +11,7 @@ const TaskFilterForm = ({w, filteredTasks, taskFilter}) => {
             <option value="">Select worker for filtering ...</option>
             <option value="all_tasks">Show All Tasks</option>
             {w.map(w => (
-                <option value={w.name} key={w.name}>
+                <option value={w.id} key={w.name}>
                     {w.name}
                 </option>
             ))}
@@ -25,8 +25,9 @@ const TaskFilterForm = ({w, filteredTasks, taskFilter}) => {
                     </ul>
                     <ul>
                         <li>Task - {t.description}</li>
-                        <li>Worker - {t.selectedEmployee}</li>
-                        <li>Address - {t.address.map(c => c.address)}</li>
+
+                        <li>Worker - {w.map(w => {if (w.id == t.idWorker) return w.name})}</li>
+                        <li>Address - {t.address.address}</li>
                         <li>Deadline - {String(t.deadline)}</li>
                     </ul>
                 </div>)}

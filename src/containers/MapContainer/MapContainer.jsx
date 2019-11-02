@@ -36,7 +36,7 @@ class MapContainer extends Component {
     render() {
         console.log("RENDERED")
         const onSubmitTask = (formData) => {
-            this.props.setTask(formData.selectedEmployee, formData.description, formData.deadline, formData.taskAddress)
+            this.props.setTask(formData.taskName, formData.idWorker, formData.description, formData.deadline, formData.taskAddress)
         };
         let {addressTemp, workers, filteredTasks, taskFilter} = this.props;
         return (

@@ -7,8 +7,8 @@ const instance =  axios.create({
 });
 
 export const taskAPI = {
-    sendTask(selectedEmployee, description, deadline, taskAddress) {
-        return axios.post(`https://geotestback.herokuapp.com/`, {selectedEmployee: selectedEmployee, description: description, deadline: deadline, taskAddress: taskAddress});
+    sendTask(taskName, idWorker, description, deadline, taskAddress) {
+        return axios.post(`https://geotestback.herokuapp.com/`, {taskName: taskName, idWorker: idWorker, description: description, deadline: deadline, taskAddress: taskAddress});
     },
 
     getTasks() {

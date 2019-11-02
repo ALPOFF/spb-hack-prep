@@ -30,7 +30,8 @@ let mapReducer = (state = initialState, action) => {
             return {
                 ...state,
                 tasks: [...state.tasks, {
-                    selectedEmployee: action.selectedEmployee,
+                    taskName: action.taskName,
+                    idWorker: action.idWorker,
                     description: action.description,
                     deadline: action.deadline,
                     address: action.taskAddress
@@ -45,7 +46,7 @@ let mapReducer = (state = initialState, action) => {
         case DEL_COORD_POINT:
             return {
                 ...state,
-                addressTemp: state.addressTemp.filter(u => u.coords !== action.pointId)
+                addressTemp: {}
             };
         case SET_ADDRESS:
             return {
@@ -62,7 +63,7 @@ let mapReducer = (state = initialState, action) => {
                 ...state,
                 filteredTasks: (action.id === 'all_tasks')
                     ? state.tasks
-                    : state.tasks.filter(t => t.selectedEmployee === action.id)
+                    : state.tasks.filter(t => t.idWorker === action.id)
             };
         default:
             return state
@@ -91,10 +92,11 @@ export const delCoordPoint = (pointId) => {
     }
 };
 
-export const setData = (selectedEmployee, description, deadline, taskAddress) => {
+export const setData = (taskName, idWorker, description, deadline, taskAddress) => {
     return {
         type: SET_TASK,
-        selectedEmployee,
+        taskName,
+        idWorker,
         description,
         deadline,
         taskAddress
@@ -125,10 +127,10 @@ export const getAddress = (coordPointAdd) => {
 };
 
 //send task to server + set task in state store
-export const setTask = (selectedEmployee, description, deadline, taskAddress) => {
+export const setTask = (taskName, idWorker, description, deadline, taskAddress) => {
     return (dispatch) => {
-        taskAPI.sendTask(selectedEmployee, description, deadline, taskAddress).then(response => {
-            dispatch(setData(selectedEmployee, description, deadline, taskAddress))
+        taskAPI.sendTask(taskName, idWorker, description, deadline, taskAddress).then(response => {
+            dispatch(setData(taskName, idWorker, description, deadline, taskAddress))
         })
     }
 };
