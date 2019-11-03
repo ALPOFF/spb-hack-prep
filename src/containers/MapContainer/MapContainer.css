@@ -1,4 +1,3 @@
-
 .MapContainerWrapper {
     display: flex;
     flex-direction: row;
@@ -28,7 +27,7 @@
 }
 
 button {
-    background-color: #28607F; /* Green */
+    background-color: #28607F;
     border: none;
     color: white;
     padding: 8px 21px;

@@ -22,11 +22,9 @@ import YandexMaps from "../../components/Map/Map";
 import TaskFilterReduxForm from "../../components/Forms/TaskFilterForm";
 import TaskReduxForm from "../../components/Forms/TaskReduxForm"
 
-
 class MapContainer extends Component {
 
     componentDidMount() {
-
         //setInterval(() => {this.setState({a:12})}, 3000)
         let {requestWorkers, requestTasks} = this.props;
         requestWorkers();
@@ -43,11 +41,9 @@ class MapContainer extends Component {
             <div className="MapContainerWrapper">
                 <div className="taskPanel">
                     <h3>Add Task</h3>
-                    <TaskReduxForm initialValues={{taskAddress: addressTemp}} w={workers}
-                                   onSubmit={onSubmitTask}/>
+                    <TaskReduxForm initialValues={{taskAddress: addressTemp}} w={workers} onSubmit={onSubmitTask}/>
                     <h3>All Tasks</h3>
-                    <TaskFilterReduxForm w={workers} filteredTasks={filteredTasks}
-                                         taskFilter={taskFilter}/>
+                    <TaskFilterReduxForm w={workers} filteredTasks={filteredTasks} taskFilter={taskFilter}/>
                 </div>
                 <YandexMaps {...this.props}/>
             </div>

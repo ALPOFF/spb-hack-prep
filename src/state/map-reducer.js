@@ -5,7 +5,7 @@ const SET_TASK = 'map/SET_TASK';
 const SET_ADDRESS = 'map/SET_ADDRESS';
 const SET_TASKS_ARR = 'map/SET_TASKS_ARR';
 const SET_WORKERS = 'map/SET_WORKERS';
-const TASK_FILTER = 'map/TASK_FILTER'
+const TASK_FILTER = 'map/TASK_FILTER';
 
 let initialState = {
     coordsTemp: [],
@@ -139,7 +139,6 @@ export const setTask = (taskName, idWorker, description, deadline, taskAddress) 
 export const requestTasks = () => {
     return (dispatch) => {
         taskAPI.getTasks().then(response => {
-            console.log(response.data);
             dispatch(setTasksArr(response.data))
         })
     }
@@ -149,7 +148,6 @@ export const requestTasks = () => {
 export const requestWorkers = () => {
     return (dispatch) => {
         taskAPI.getWorkers().then(response => {
-            console.log(response.data);
             dispatch(setWorkers(response.data))
         })
     }
