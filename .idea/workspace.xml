@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c10b4af-e0f9-4d57-806c-67fee9bf5261" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forms/TaskFilterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/TaskFilterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map/Map.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/Map.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/Map.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MapContainer/MapContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/map-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/map-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.48e927375668a2df48af7e833b08ea85.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/2.53a02bb0.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/css/2.53a02bb0.chunk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.7df85ed4.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.7df85ed4.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.5f4d30ab.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.5f4d30ab.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.7ebc1779.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.7ebc1779.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.28cc1408.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/runtime-main.28cc1408.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/rw-widgets.792dcd18.svg" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/media/rw-widgets.792dcd18.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SvvJRPD1ONf7rm1GdAXCZ2P4nQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -61,6 +71,12 @@
       <workItem from="1572547360690" duration="6787000" />
       <workItem from="1572665142787" duration="12000" />
       <workItem from="1572691479977" duration="13933000" />
+      <workItem from="1573143056852" duration="60000" />
+      <workItem from="1573143122506" duration="15000" />
+      <workItem from="1573143143743" duration="34000" />
+      <workItem from="1573143184835" duration="1061000" />
+      <workItem from="1573250297450" duration="2780000" />
+      <workItem from="1573282094065" duration="883000" />
     </task>
     <servers />
   </component>

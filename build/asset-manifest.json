@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.7df85ed4.chunk.css",
-    "main.js": "/static/js/main.7ebc1779.chunk.js",
-    "main.js.map": "/static/js/main.7ebc1779.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.28cc1408.js",
-    "runtime-main.js.map": "/static/js/runtime-main.28cc1408.js.map",
-    "static/css/2.53a02bb0.chunk.css": "/static/css/2.53a02bb0.chunk.css",
-    "static/js/2.5f4d30ab.chunk.js": "/static/js/2.5f4d30ab.chunk.js",
-    "static/js/2.5f4d30ab.chunk.js.map": "/static/js/2.5f4d30ab.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.48e927375668a2df48af7e833b08ea85.js": "/precache-manifest.48e927375668a2df48af7e833b08ea85.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.53a02bb0.chunk.css.map": "/static/css/2.53a02bb0.chunk.css.map",
-    "static/css/main.7df85ed4.chunk.css.map": "/static/css/main.7df85ed4.chunk.css.map",
-    "static/media/react-widgets.css": "/static/media/rw-widgets.eceddf47.ttf"
+    "main.css": "/spb-hack-prep/static/css/main.4509ae03.chunk.css",
+    "main.js": "/spb-hack-prep/static/js/main.50fd36e6.chunk.js",
+    "main.js.map": "/spb-hack-prep/static/js/main.50fd36e6.chunk.js.map",
+    "runtime-main.js": "/spb-hack-prep/static/js/runtime-main.d0cfead9.js",
+    "runtime-main.js.map": "/spb-hack-prep/static/js/runtime-main.d0cfead9.js.map",
+    "static/css/2.728c00f1.chunk.css": "/spb-hack-prep/static/css/2.728c00f1.chunk.css",
+    "static/js/2.43ea8b57.chunk.js": "/spb-hack-prep/static/js/2.43ea8b57.chunk.js",
+    "static/js/2.43ea8b57.chunk.js.map": "/spb-hack-prep/static/js/2.43ea8b57.chunk.js.map",
+    "index.html": "/spb-hack-prep/index.html",
+    "precache-manifest.d9c2b223f1480fb8035b64e105f92a4a.js": "/spb-hack-prep/precache-manifest.d9c2b223f1480fb8035b64e105f92a4a.js",
+    "service-worker.js": "/spb-hack-prep/service-worker.js",
+    "static/css/2.728c00f1.chunk.css.map": "/spb-hack-prep/static/css/2.728c00f1.chunk.css.map",
+    "static/css/main.4509ae03.chunk.css.map": "/spb-hack-prep/static/css/main.4509ae03.chunk.css.map",
+    "static/media/react-widgets.css": "/spb-hack-prep/static/media/rw-widgets.eceddf47.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.28cc1408.js",
-    "static/css/2.53a02bb0.chunk.css",
-    "static/js/2.5f4d30ab.chunk.js",
-    "static/css/main.7df85ed4.chunk.css",
-    "static/js/main.7ebc1779.chunk.js"
+    "static/js/runtime-main.d0cfead9.js",
+    "static/css/2.728c00f1.chunk.css",
+    "static/js/2.43ea8b57.chunk.js",
+    "static/css/main.4509ae03.chunk.css",
+    "static/js/main.50fd36e6.chunk.js"
   ]
 }
